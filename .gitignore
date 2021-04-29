@@ -103,6 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-# js
-wwwroot/app/**/*.js
-wwwroot/app/**/*.map
+# Ignores compiled TypeScript files
+**/wwwroot/app/**/*.map
+**/wwwroot/app/**/*.js
