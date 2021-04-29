@@ -107,3 +107,12 @@ dist
 **/wwwroot/app/**/*.map
 **/wwwroot/app/**/*.js
 
+# Visual Studio 2015 cache/options directory
+.vs/
+bower_components/
+node_modules/
+
+
+#Exclude tsc generated files
+js/*.map
+js/ts.js
