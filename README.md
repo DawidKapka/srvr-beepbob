@@ -9,3 +9,9 @@ simple Discord Bot for srvr
   "token": "<discord_token>"
 }
 ```
+- **install ```node``` & ```npm```**
+
+- **compile & run**
+```
+npm start
+```
