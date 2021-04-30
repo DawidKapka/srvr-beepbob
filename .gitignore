@@ -118,3 +118,6 @@ js/*.map
 js/ts.js
 
 config.json
+
+*.js
+*.map
