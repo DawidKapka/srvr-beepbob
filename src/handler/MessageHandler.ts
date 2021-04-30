@@ -20,6 +20,11 @@ export class MessageHandler {
     }
 
     checkMessageForChannels(message:Message) {
-
+        if(message.channel.id === '837378944801046578')
+            if(message.author.id !== '836998496468729866' && message.author.id !== '270904126974590976')
+                if(message.content !== 'pls meme') {
+                    message.delete()
+                    message.reply('Only "pls meme" commands allowed in this channel!')
+                }
     }
 } 
