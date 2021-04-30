@@ -1,4 +1,11 @@
 # srvr-beepbob
 simple Discord Bot for srvr
 
-## Run
+### Run locally
+
+- **create ```config.json```**
+```typescript
+{
+  "token": "<discord_token>"
+}
+```
