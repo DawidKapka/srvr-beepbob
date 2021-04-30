@@ -1,2 +1,2 @@
 # srvr-beepbob
-Discord Bot for srvr
+simple Discord Bot for srvr
