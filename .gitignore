@@ -107,3 +107,5 @@ node_modules/
 
 *.js
 *.js.map
+
+config.json
