@@ -13,6 +13,9 @@ initCommands()
 
 client.login(config.token)
 
+client.on('ready', () => {
+    client.user.setActivity('!help', {type: 'LISTENING'})
+})
 client.on('message', message => {
     messageHandler.checkMessageForChannels(message)
     messageHandler.handle(message, commands, client)
