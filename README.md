@@ -1,6 +1,5 @@
 # srvr-beepbob
 simple Discord Bot for srvr
-
 ### Run locally
 
 - **create ```config.json```**
@@ -20,3 +19,10 @@ node src/index.js
 ```
 npm start
 ```
+
+*
+configured for specific discord server
+to run on other server, adjust id's in ```src/resources/id.json```
+
+might add a config file for adjusting later...
+*
