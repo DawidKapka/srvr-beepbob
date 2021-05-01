@@ -1,4 +1,4 @@
-import { RankCommands } from "../commands_old/RankCommands";
+import { RankCommands } from "../ranks/RankCommands";
 import { Client, GuildMember, TextChannel } from 'discord.js';
 
 var rankCommands = new RankCommands();

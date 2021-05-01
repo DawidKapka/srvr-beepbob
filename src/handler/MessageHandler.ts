@@ -1,6 +1,7 @@
 import { Client, GuildMember, Message, MessageFlags } from 'discord.js';
 
 const prefix = '!'
+const ids = require('../resources/id.json')
 
 export class MessageHandler {
     handle(message: Message, commands, client: Client) {
@@ -19,6 +20,7 @@ export class MessageHandler {
 
     checkMessageForChannels(message:Message) {
         this.checkMessageForMemeChannel(message)
+        this.checkMessageForMusicChannel(message)
     }
 
     checkAdmin(member: GuildMember) {
@@ -26,14 +28,28 @@ export class MessageHandler {
     }
 
     checkMessageForMemeChannel(message: Message) {
-        if(message.channel.id === '837378944801046578')
-        if(message.author.id !== '836998496468729866' && message.author.id !== '270904126974590976')
-            if(message.content !== 'pls meme') {
-                message.delete()
-                message.reply('Only "pls meme" commands allowed in this channel!')
-                setTimeout(() => { message.channel.messages.fetch().then(messages => {
-                    messages.first().delete()
-                })}, 2000)
-            }
+        if(message.channel.id === ids.memeChannelId)
+            if(message.author.id !== ids.botId && message.author.id !== ids.dev_botId && message.author.id !== ids.dankMemerId)
+                if(message.content !== 'pls meme') {
+                    message.delete()
+                    message.reply('Only "pls meme" commands allowed in this channel!')
+                    setTimeout(() => { message.channel.messages.fetch().then(messages => {
+                        if (messages.first().author.id === ids.botId || messages.first().author.id === ids.dev_botId)
+                            messages.first().delete()
+                    })}, 2000)
+                }
+    }
+
+    checkMessageForMusicChannel(message: Message) {
+        if(message.channel.id === ids.musicChannelId)
+            if (message.author.id !== ids.botId && message.author.id !== ids.dev_botId && message.author.id !== ids.groovyId)
+                if (!message.content.startsWith('-')) {
+                    message.delete()
+                    message.reply('Only Groovy-Commands (-) allowed in this channel!')
+                    setTimeout(() => { message.channel.messages.fetch().then(messages => {
+                        if (messages.first().author.id === ids.botId || messages.first().author.id === ids.dev_botId)
+                            messages.first().delete()
+                    })}, 2000)
+                }
     }
 } 
