@@ -1,4 +1,4 @@
-# srvr-beepbob
+# BeepBob
 simple Discord Bot for srvr
 ### Run locally
 
