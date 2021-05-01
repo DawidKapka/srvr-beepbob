@@ -13,5 +13,10 @@ simple Discord Bot for srvr
 
 - **compile & run**
 ```
+tsc -p .
+node src/index.js
+```
+**or**
+```
 npm start
 ```
