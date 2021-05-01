@@ -20,8 +20,8 @@ node src/index.js
 npm start
 ```
 
-*configured for specific discord server*
-*to run on other server, adjust id's in ```src/resources/id.json```*
+> configured for specific discord server
+> to run on other server, adjust id's in ```src/resources/id.json```
 
-*might add a config file for adjusting later...*
+> might add a config file for adjusting later...
 
