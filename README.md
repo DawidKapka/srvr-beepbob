@@ -10,6 +10,11 @@ simple Discord Bot for srvr
 ```
 - **install ```node``` & ```npm```**
 
+- **install node modules**
+```
+npm install
+```
+
 - **compile & run**
 ```
 tsc -p .
