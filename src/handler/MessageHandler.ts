@@ -5,16 +5,18 @@ const ids = require('../resources/id.json')
 
 export class MessageHandler {
     handle(message: Message, commands, client: Client) {
-        if (!message.content.startsWith(prefix) || message.author.bot) return;
-        const args = message.content.slice(prefix.length).trim().split(/ +/);
-        const commandStr = args.shift().toLowerCase()
-        const command = commands.get(commandStr)
-        if (command.admin) {
-            if (this.checkAdmin(message.member)) {
-                command.execute(client, message, args, commands)
-            }
-        } 
-        else command.execute(client, message, args, commands)
+        if (commands.find(c => c.name === message.content.slice(prefix.length))) {
+            if (!message.content.startsWith(prefix) || message.author.bot) return;
+            const args = message.content.slice(prefix.length).trim().split(/ +/);
+            const commandStr = args.shift().toLowerCase()
+            const command = commands.get(commandStr)
+            if (command.admin) {
+                if (this.checkAdmin(message.member)) {
+                    command.execute(client, message, args, commands)
+                }
+            } 
+            else command.execute(client, message, args, commands)
+        }
         
     }
 
