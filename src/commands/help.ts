@@ -13,7 +13,7 @@ module.exports = {
             .setColor("YELLOW")
             .setTitle('Help')
             .setDescription("``" + `${desc}` + "``")
-            .setFooter("")
-        message.channel.send(embed)
+            .setFooter("");
+        message.channel.send(embed);
     }
 }
