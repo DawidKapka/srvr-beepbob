@@ -17,7 +17,8 @@ export class MessageHandler {
             } 
             else command.execute(client, message, args, commands)
         } else {
-            message.reply(`Sorry, "${message}" is not a valid command.`);
+            if (message.content.startsWith(prefix) && !message.author.bot)
+                message.reply(`Sorry, "${message}" is not a valid command.`);
         }
         
     }
